@@ -37,7 +37,7 @@ function draw() {
   let windowY = (height - windowSize) / 2;
 
   // how many tiles across that window?
-  let tileCount = max(4, floor(map(mouseX, 0, width, 6, 150))); // resolution control
+  let tileCount = max(4, floor(map(mouseX, 0, width, 6, 200))); // resolution control
   let rectSize = windowSize / float(tileCount); // pixel size inside the window
 
   // -------------------------------
