@@ -28,9 +28,11 @@ function draw() {
     return;
   }
 
+
   let windowSize = min(width, height) * 0.8; // 80% of the smaller side
   let windowX = (width - windowSize) / 2;
   let windowY = (height - windowSize) / 2;
+
 
   let tileCount = max(4, floor(map(mouseX, 0, width, 6, 150))); // resolution control
   let rectSize = windowSize / float(tileCount); // pixel size inside the window
@@ -43,7 +45,8 @@ function draw() {
   for (let gridY = 0; gridY < tileCount; gridY++) {
     for (let gridX = 0; gridX < tileCount; gridX++) {
 
-    
+      // map grid position (0..tileCount) into image space (0..img.width/height)
+      // sample from the center of each cell
       let px = int(map(gridX + 0.5, 0, tileCount, 0, img.width  - 1));
       let py = int(map(gridY + 0.5, 0, tileCount, 0, img.height - 1));
 
@@ -51,7 +54,6 @@ function draw() {
       colors.push(color(c));
     }
   }
-
 
 
   if (sortMode !== null) {
@@ -71,6 +73,7 @@ function draw() {
     });
   }
 
+
   colorMode(RGB, 255);
 
   let i = 0;
@@ -87,14 +90,12 @@ function draw() {
     }
   }
 
-
   noFill();
   //stroke(255, 80);
   noStroke();
   //strokeWeight(2);
   rect(windowX, windowY, windowSize, windowSize);
 }
-
 
 function handleFile(event) {
   const file = event.target.files[0];
