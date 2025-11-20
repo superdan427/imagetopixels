@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Color Sort Mosaic</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #111;
+        color: #eee;
+        font-family: sans-serif;
+      }
+      #ui {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+      }
+      #ui button {
+        margin-right: 4px;
+        margin-top: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ui">
+      <input type="file" id="imgInput" accept="image/*">
+      <div>
+        <button id="modeOriginal">Original</button>
+        <button id="modeHue">Hue</button>
+        <button id="modeSat">Sat</button>
+        <button id="modeBri">Bright</button>
+      
+      </div>
+    </div>
+  </body>
+</html>
